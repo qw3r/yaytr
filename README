@@ -1,0 +1,19 @@
+Yet Another YouTube Ripper
+
+Requirements:
+	youtube-dl (http://bitbucket.org/rg3/youtube-dl/)
+	ffmpeg (http://ffmpeg.org/)
+
+Usage:
+	just edit the file named "list"
+	run "ruby converter.rb"
+	
+Format of file "list":
+
+youtube-hash TAB TAB artist TAB TAB title
+hash\t\there comes the artist\t\tname of the song
+
+example:
+
+yS1M6ODpdV4		The Unseen		Paint It Black (Rolling Stones Cover)
+
