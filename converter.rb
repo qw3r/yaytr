@@ -5,6 +5,7 @@ File.open('list', 'r').each_line do |line|
 	begin
 		next if line.strip! =~ /^$/
 		f, a, t = line.split "\t\t"
+		f = $1 if f =~ /\Ahttp.*v=(\S{11})(&\S+)?\Z/i
 		t.strip!
 		STDOUT.sync = true
 		Open3.popen3 "youtube-dl #{f}" do |i,o,e|
@@ -12,7 +13,7 @@ File.open('list', 'r').each_line do |line|
 			o.each("\r") do |line|
 				#"\"[download]  15.0% of 53.16M at    9.28M/s ETA 00:04 \\r\"
 		  	if line =~ /download\]\s+(\d+\..*ETA\s+\d+:\d{1,2}\s)/
-		  		print "\r#{a} - #{t} [downloading: #{$1.strip}]".ljust(columns - 2)
+		  		print "\r#{a} - #{t} (#{f}) [downloading: #{$1.strip}]".ljust(columns - 2)
 		  	end
 			end
 		end unless File.exists?("#{f}.mp4") or File.exists?("#{f}.flv")

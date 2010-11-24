@@ -1,5 +1,7 @@
 Yet Another YouTube Ripper
 
+I write this for my wife :)
+
 Requirements:
 	youtube-dl (http://bitbucket.org/rg3/youtube-dl/)
 	ffmpeg (http://ffmpeg.org/)
@@ -10,10 +12,11 @@ Usage:
 	
 Format of file "list":
 
-youtube-hash TAB TAB artist TAB TAB title
+youtube-hash_OR_complete_uri TAB TAB artist TAB TAB title
 hash\t\there comes the artist\t\tname of the song
 
 example:
 
 yS1M6ODpdV4		The Unseen		Paint It Black (Rolling Stones Cover)
+http://www.youtube.com/watch?v=7uIFISklvXY    Texas   Summer son
 
